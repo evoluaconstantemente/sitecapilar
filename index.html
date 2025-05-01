@@ -12,11 +12,10 @@
             padding: 0;
         }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: Arial, sans-serif;
             line-height: 1.6;
-            background-color: #f7f7f7;
+            background-color: #f4f4f4;
             color: #333;
-            scroll-behavior: smooth;
         }
         .container {
             width: 90%;
@@ -30,37 +29,30 @@
             background: #fff;
             padding: 20px 0;
             border-bottom: 2px solid #eee;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
         .logo {
             display: flex;
             align-items: center;
-            justify-content: center;
             margin-bottom: 15px;
-            flex-direction: column;
         }
         .logo img {
-            width: 80px;
-            height: 80px;
+            width: 70px;
+            height: 70px;
             object-fit: cover;
             border-radius: 50%;
-            border: 3px solid #e67e22;
-            transition: transform 0.3s ease;
-        }
-        .logo img:hover {
-            transform: rotate(10deg);
+            border: 2px solid #e67e22;
         }
         .logo strong {
             font-size: 24px;
             color: #2c3e50;
-            margin-top: 10px;
+            margin-left: 15px;
         }
         .logo small {
             display: block;
             font-size: 14px;
             color: #888;
+            margin-left: 15px;
         }
-
         nav ul {
             list-style: none;
             display: flex;
@@ -73,20 +65,25 @@
             text-decoration: none;
             color: #333;
             font-weight: bold;
-            transition: color 0.3s ease, transform 0.2s;
+            transition: color 0.3s ease;
         }
         nav ul li a:hover {
             color: #e67e22;
-            transform: scale(1.05);
         }
 
         /* Hero Section */
         #hero {
-            background: linear-gradient(to right, #ffffff, #fdfcfb);
-            padding: 80px 20px 60px;
+            background: linear-gradient(to right, #ffffff, #fafafa);
+            padding: 60px 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
             text-align: center;
-            position: relative;
-            overflow: hidden;
+        }
+        .hero-content {
+            flex: 1;
+            min-width: 300px;
         }
         .hero-content h1 {
             font-size: 2.5em;
@@ -95,7 +92,7 @@
         }
         .hero-content p {
             font-size: 1.1em;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
@@ -108,11 +105,45 @@
             text-decoration: none;
             font-size: 1.05em;
             border-radius: 5px;
-            transition: background 0.3s, transform 0.2s;
+            transition: background 0.3s;
         }
         .cta-button:hover {
             background: #d35400;
-            transform: translateY(-2px);
+        }
+        .hero-image {
+            display: none; /* Imagem removida até estar disponível */
+        }
+
+        /* Botão WhatsApp Flutuante (mobile only) */
+        .whatsapp-float {
+            display: none;
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 20px;
+            right: 20px;
+            background: #2ecc71;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            z-index: 9999;
+            text-decoration: none;
+            line-height: 60px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                display: block;
+            }
         }
 
         /* Seção de Ofertas */
@@ -131,23 +162,19 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 30px;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 0.8s forwards;
         }
-
         .offer-card {
+            position: relative;
             background: #fcfcfc;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+            padding: 20px;
             text-align: center;
             max-width: 300px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease;
         }
         .offer-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
         }
         .featured-tag {
             position: absolute;
@@ -156,16 +183,14 @@
             transform: translateX(-50%);
             background: #27ae60;
             color: white;
-            padding: 6px 16px;
+            padding: 5px 15px;
             font-size: 0.9em;
             border-radius: 5px;
             font-weight: bold;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
         .offer-card img {
             max-width: 100%;
             height: auto;
-            border-radius: 10px;
             margin-bottom: 15px;
         }
         .offer-card h3 {
@@ -187,21 +212,13 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 30px;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 0.8s forwards;
         }
         .benefit-card {
             background: #fff;
-            border-radius: 10px;
-            padding: 25px;
+            border-radius: 8px;
+            padding: 20px;
             text-align: center;
             max-width: 250px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
-        }
-        .benefit-card:hover {
-            transform: translateY(-5px);
         }
         .benefit-card .icon {
             font-size: 2.5em;
@@ -213,31 +230,27 @@
             padding: 60px 0;
             background: #fff;
         }
-        #depoimentos h2 {
-            text-align: center;
-            font-size: 2em;
-            color: #2c3e50;
-            margin-bottom: 40px;
-        }
         .testimonial-slider {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 30px;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 0.8s forwards;
         }
         .testimonial-card {
             background: #f8f8f8;
-            border-radius: 10px;
+            border-radius: 8px;
             padding: 20px;
             max-width: 300px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
         }
-        .testimonial-card:hover {
-            transform: translateY(-5px);
+        .testimonial-card p {
+            font-size: 1em;
+            margin-bottom: 15px;
+        }
+        .testimonial-card cite {
+            display: block;
+            font-style: normal;
+            color: #666;
         }
 
         /* Garantia */
@@ -291,50 +304,6 @@
             margin-top: 40px;
             display: block;
         }
-
-        /* Animações */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Botão Flutuante WhatsApp (mobile only) */
-        .whatsapp-float {
-            display: none;
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 20px;
-            right: 20px;
-            background: #2ecc71;
-            color: white;
-            border-radius: 50%;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            z-index: 9999;
-            text-decoration: none;
-            line-height: 60px;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        @media (max-width: 768px) {
-            .whatsapp-float {
-                display: block;
-            }
-        }
     </style>
 </head>
 <body>
@@ -366,9 +335,10 @@
     <div class="container">
         <div class="hero-content">
             <h1>O Único Tratamento Capilar com Tecnologia Foti-Solution 5x</h1>
-            <p>
+            <p style="font-size:1.2em; font-weight:bold;">
                 Recupere fios perdidos, acelere o crescimento capilar e pare com a queda de cabelo usando o único produto cientificamente validado.
-                <strong>100% Natural e sem Efeitos Colaterais.</strong>
+                <br>
+                Fórmula 100% natural. Sem efeitos colaterais. Garantia de 90 dias.
             </p>
             <a href="#ofertas" class="cta-button">QUERO RECUPERAR MEU CABELO AGORA</a>
         </div>
@@ -384,7 +354,7 @@
             <div class="offer-card">
                 <img src="https://i.imgur.com/5yZdwkg.jpeg" alt="Tratamento de 12 meses">
                 <h3>Plano Premium: 12 Meses + Bônus Exclusivo</h3>
-                <p><strong>R$ 497 à vista</strong> ou 12x de R$ 41,42</p>
+                <p><strong>R$ 727 à vista</strong> ou 12x de R$ 60,58</p>
                 <p>Tratamento completo para 1 ano, frete grátis e acompanhamento personalizado do especialista Jean.</p>
                 <a href="https://pay.braip.co/campanhas/cpa/cam2m6zrp" class="cta-button">COMPRAR AGORA</a>
             </div>
@@ -432,7 +402,7 @@
             <div class="benefit-card">
                 <div class="icon">🛡️</div>
                 <h3>Garantia Blindada de 90 Dias</h3>
-                <p>Você tem 90 dias para testar e ver resultados. Se não estiver satisfeito(a), devolvemos 100% do valor.</p>
+                <p>Você tem 90 dias para testar e ver resultados. Se não estiver satisfeito(a), devolvemos 100% do valor investido.</p>
             </div>
         </div>
     </div>
