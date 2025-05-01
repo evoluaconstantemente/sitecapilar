@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DHT Blocker - Tratamento Capilar 5x Mais Rápido</title>
+    <meta name="description" content="Recupere seu cabelo com o tratamento mais eficaz do Brasil. Fórmula 100% natural, tecnologia Foti-Solution 5x e garantia de 90 dias. Oferta por tempo limitado!">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 20px;
+        }
+        header {
+            background: #fff;
+            padding: 20px 0;
+            border-bottom: 2px solid #eee;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .logo img {
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid #e67e22;
+        }
+        .logo strong {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-left: 15px;
+        }
+        .logo small {
+            display: block;
+            font-size: 14px;
+            color: #888;
+            margin-left: 15px;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #e67e22;
+        }
+
+        /* Hero Section */
+        #hero {
+            background: linear-gradient(to right, #ffffff, #fafafa);
+            padding: 60px 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .hero-content {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 30px;
+        }
+        .hero-content h1 {
+            font-size: 2.5em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        .hero-content p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #e67e22;
+            color: white;
+            text-decoration: none;
+            font-size: 1.05em;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .cta-button:hover {
+            background: #d35400;
+        }
+
+        /* Seção de Ofertas */
+        #ofertas {
+            padding: 60px 0;
+            background: #fff;
+        }
+        #ofertas h2 {
+            text-align: center;
+            font-size: 2em;
+            color: #2c3e50;
+            margin-bottom: 40px;
+        }
+        .offer-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        .offer-card {
+            position: relative;
+            background: #fcfcfc;
+            border-radius: 8px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+            padding: 20px;
+            text-align: center;
+            max-width: 300px;
+            transition: transform 0.3s ease;
+        }
+        .offer-card:hover {
+            transform: translateY(-5px);
+        }
+        .featured-tag {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #27ae60;
+            color: white;
+            padding: 5px 15px;
+            font-size: 0.9em;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .offer-card img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+        }
+        .offer-card h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        .offer-card p {
+            font-size: 0.95em;
+            margin-bottom: 15px;
+        }
+
+        /* Benefícios */
+        #beneficios {
+            padding: 60px 0;
+            background: #f0f0f0;
+        }
+        .benefits-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        .benefit-card {
+            background: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            max-width: 250px;
+        }
+        .benefit-card h3 {
+            margin-bottom: 10px;
+        }
+
+        /* Depoimentos */
+        #depoimentos {
+            padding: 60px 0;
+            background: #fff;
+        }
+        .testimonial-slider {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        .testimonial-card {
+            background: #f8f8f8;
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 300px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+        }
+        .testimonial-card cite {
+            display: block;
+            margin-top: 10px;
+            font-style: normal;
+            color: #666;
+        }
+
+        /* Garantia */
+        #garantia {
+            padding: 60px 0;
+            background: #fefae0;
+            text-align: center;
+        }
+        #garantia h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        #garantia p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+
+        /* FAQ */
+        #faq {
+            padding: 60px 0;
+            background: #fff;
+        }
+        .faq-item {
+            margin-bottom: 25px;
+        }
+        .faq-item h3 {
+            color: #e67e22;
+            margin-bottom: 10px;
+        }
+        .faq-item p {
+            font-size: 1em;
+        }
+
+        /* Rodapé */
+        footer {
+            background: #222;
+            color: #ccc;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 0.9em;
+        }
+        footer a {
+            color: #ccc;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        footer a:hover {
+            color: #e67e22;
+        }
+        .warning {
+            color: red;
+            font-weight: bold;
+            margin-top: 40px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Cabeçalho -->
+<header>
+    <div class="container">
+        <div class="logo">
+            <img src="https://i.imgur.com/awKJOgO.png" alt="Foto do Especialista Jean">
+            <div>
+                <strong>Especialista Jean</strong><br>
+                <small>Especialista em Tratamento Capilar</small>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#ofertas">Ofertas</a></li>
+                <li><a href="#beneficios">Benefícios</a></li>
+                <li><a href="#depoimentos">Depoimentos</a></li>
+                <li><a href="#garantia">Garantia</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- Hero -->
+<section id="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1>O Único Tratamento Capilar com Tecnologia Foti-Solution 5x</h1>
+            <p>
+                Recupere fios perdidos, acelere o crescimento capilar e pare com a queda de cabelo usando o único produto cientificamente validado.
+                <strong>100% Natural e sem Efeitos Colaterais.</strong>
+            </p>
+            <a href="#ofertas" class="cta-button">QUERO RECUPERAR MEU CABELO AGORA</a>
+        </div>
+    </div>
+</section>
+
+<!-- Ofertas -->
+<section id="ofertas">
+    <div class="container">
+        <h2>Escolha Sua Oferta Especial</h2>
+        <div class="offer-grid">
+            <!-- Oferta 12 Meses -->
+            <div class="offer-card">
+                <img src="https://i.imgur.com/5yZdwkg.jpeg" alt="Tratamento de 12 meses">
+                <h3>Plano Premium: 12 Meses + Bônus Exclusivo</h3>
+                <p><strong>R$ 497 à vista</strong> ou 12x de R$ 41,42</p>
+                <p>Tratamento completo para 1 ano, frete grátis e acompanhamento personalizado do especialista Jean.</p>
+                <a href="https://pay.braip.co/campanhas/cpa/cam2m6zrp" class="cta-button">COMPRAR AGORA</a>
+            </div>
+            <!-- Oferta 5 Meses (Destaque) -->
+            <div class="offer-card">
+                <div class="featured-tag">MAIS VENDIDO</div>
+                <img src="https://i.imgur.com/dW0qF8h.jpeg" alt="Tratamento de 5 meses">
+                <h3>Plano Completo: 5 Meses + 2 Sprays Grátis</h3>
+                <p><strong>R$ 397 à vista</strong> ou 12x de R$ 33,08</p>
+                <p>5 meses de tratamento, 60% de desconto, frete grátis e acompanhamento do especialista Jean.</p>
+                <a href="https://pay.braip.co/campanhas/cpa/caml8kekg" class="cta-button">COMPRAR AGORA</a>
+            </div>
+            <!-- Oferta 3 Meses -->
+            <div class="offer-card">
+                <img src="https://i.imgur.com/sPU998C.jpeg" alt="Tratamento de 3 meses">
+                <h3>Plano Inicial: 3 Meses + 1 Spray Grátis</h3>
+                <p><strong>R$ 297 à vista</strong> ou 12x de R$ 24,75</p>
+                <p>3 meses de tratamento, 40% de desconto, frete grátis e acompanhamento do especialista Jean.</p>
+                <a href="https://pay.braip.co/campanhas/cpa/cam04drek" class="cta-button">COMPRAR AGORA</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Por Que Escolher o DHT BLOCKER? -->
+<section id="beneficios">
+    <div class="container">
+        <h2>Por Que Escolher o DHT BLOCKER?</h2>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div style="font-size: 3em; margin-bottom: 10px;">🔬</div>
+                <h3>Tecnologia Foti-Solution 5x</h3>
+                <p>A exclusiva tecnologia importada do Japão age diretamente nas glândulas sublinguais, resultando em absorção muito mais rápida.</p>
+            </div>
+            <div class="benefit-card">
+                <div style="font-size: 3em; margin-bottom: 10px;">🌱</div>
+                <h3>100% Natural e Seguro</h3>
+                <p>Sua fórmula é totalmente baseada em ingredientes naturais, testados clinicamente e livres de química agressiva.</p>
+            </div>
+            <div class="benefit-card">
+                <div style="font-size: 3em; margin-bottom: 10px;">⏱️</div>
+                <h3>Ação Até 5x Mais Rápida</h3>
+                <p>Comprovado contra os principais tratamentos tradicionais como Minoxidil e Finasterida — com até 5x mais eficácia.</p>
+            </div>
+            <div class="benefit-card">
+                <div style="font-size: 3em; margin-bottom: 10px;">🛡️</div>
+                <h3>Garantia Blindada de 90 Dias</h3>
+                <p>Você tem 90 dias para testar e ver resultados. Se não estiver satisfeito(a), basta pedir reembolso que devolvemos 100% do valor.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Depoimentos -->
+<section id="depoimentos">
+    <div class="container">
+        <h2>O Que Clientes Como Você Estão Dizendo</h2>
+        <div class="testimonial-slider">
+            <div class="testimonial-card">
+                <p>"Comecei a ver novos fios após 30 dias. Hoje estou no 5º mês e meu cabelo voltou a crescer forte e denso."</p>
+                <cite>- Felipe Sousa, São Paulo</cite>
+            </div>
+            <div class="testimonial-card">
+                <p>"Usei outros produtos e só tive complicações. DHT Blocker foi o primeiro que realmente parou minha queda de cabelo."</p>
+                <cite>- Luiz Fernando, Rio de Janeiro</cite>
+            </div>
+            <div class="testimonial-card">
+                <p>"Após anos tentando de tudo, finalmente encontrei uma solução real. Recomendo pra quem quer ver resultado de verdade."</p>
+                <cite>- Marcelo Teixeira, Curitiba</cite>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Garantia -->
+<section id="garantia">
+    <div class="container">
+        <h2>Desafio dos 90 Dias</h2>
+        <p>Não temos medo de garantir os resultados. Se em até 90 dias você não notar nenhuma melhora, devolvemos 100% do seu dinheiro na hora.</p>
+        <a href="#" class="cta-button">TESTE SEM RISCO</a>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+    <div class="container">
+        <h2>Perguntas Frequentes</h2>
+        <div class="faq-item">
+            <h3>Quem pode usar o DHT Blocker?</h3>
+            <p>Homens e mulheres acima de 18 anos que sofrem com calvície, afinamento capilar ou perda de cabelo.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Existe algum efeito colateral?</h3>
+            <p>Não. A fórmula 100% natural não causa malefícios ao organismo.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Como é feita a entrega?</h3>
+            <p>Código de rastreamento enviado em até 24 horas após confirmação do pagamento. Entrega pelos Correios.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Posso comprar pelo WhatsApp?</h3>
+            <p>Sim! Temos representantes autorizados no WhatsApp para atender e ajudar na sua decisão de compra. Entre em contato conosco!</p>
+        </div>
+    </div>
+</section>
+
+<!-- Rodapé -->
+<footer>
+    <div class="container">
+        <img src="logo-dht-footer.png" alt="Logo DHT Blocker Rodapé" style="max-width: 150px;">
+        <div class="footer-links">
+            <a href="#">Política de Privacidade</a>
+            <a href="#">Termos de Uso</a>
+            <a href="#">Site Seguro</a>
+        </div>
+        <p>© 2025 DHT Blocker. Todos os direitos reservados.</p>
+        <p class="warning">⚠️ ATENÇÃO: O DHT BLOCKER ORIGINAL só é vendido no SITE OFICIAL e com REPRESENTANTES AUTORIZADOS no WHATSAPP. Produtos encontrados no Mercado Livre, Shopee, Magalu e similares são FALSOS e podem ser prejudiciais à saúde.</p>
+    </div>
+</footer>
+
+</body>
+</html>
