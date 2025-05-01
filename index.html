@@ -79,11 +79,11 @@
             flex-wrap: wrap;
             align-items: center;
             justify-content: space-between;
-            text-align: center;
         }
         .hero-content {
             flex: 1;
             min-width: 300px;
+            padding-right: 30px;
         }
         .hero-content h1 {
             font-size: 2.5em;
@@ -93,9 +93,6 @@
         .hero-content p {
             font-size: 1.1em;
             margin-bottom: 20px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
         }
         .cta-button {
             display: inline-block;
@@ -111,39 +108,10 @@
             background: #d35400;
         }
         .hero-image {
-            display: none; /* Imagem removida até estar disponível */
-        }
-
-        /* Botão WhatsApp Flutuante (mobile only) */
-        .whatsapp-float {
-            display: none;
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 20px;
-            right: 20px;
-            background: #2ecc71;
-            color: white;
-            border-radius: 50%;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            z-index: 9999;
-            text-decoration: none;
-            line-height: 60px;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        @media (max-width: 768px) {
-            .whatsapp-float {
-                display: block;
-            }
+            flex: 1;
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
         }
 
         /* Seção de Ofertas */
@@ -202,6 +170,24 @@
             margin-bottom: 15px;
         }
 
+        /* Botões Comprar Agora com efeito piscante */
+        .cta-button,
+        .offer-card .cta-button {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #e67e22;
+            color: white;
+            text-decoration: none;
+            font-size: 1em;
+            border-radius: 5px;
+            animation: blink 2s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
         /* Benefícios */
         #beneficios {
             padding: 60px 0;
@@ -223,6 +209,7 @@
         .benefit-card .icon {
             font-size: 2.5em;
             margin-bottom: 10px;
+            display: block;
         }
 
         /* Depoimentos */
@@ -243,12 +230,9 @@
             max-width: 300px;
             box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
         }
-        .testimonial-card p {
-            font-size: 1em;
-            margin-bottom: 15px;
-        }
         .testimonial-card cite {
             display: block;
+            margin-top: 10px;
             font-style: normal;
             color: #666;
         }
@@ -304,6 +288,38 @@
             margin-top: 40px;
             display: block;
         }
+
+        /* Botão Flutuante Telefone (mobile only) */
+        .contact-float {
+            display: none;
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 20px;
+            right: 20px;
+            background: #2ecc71;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            z-index: 9999;
+            text-decoration: none;
+            line-height: 60px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @media (max-width: 768px) {
+            .contact-float {
+                display: block;
+            }
+        }
     </style>
 </head>
 <body>
@@ -335,13 +351,13 @@
     <div class="container">
         <div class="hero-content">
             <h1>O Único Tratamento Capilar com Tecnologia Foti-Solution 5x</h1>
-            <p style="font-size:1.2em; font-weight:bold;">
+            <p>
                 Recupere fios perdidos, acelere o crescimento capilar e pare com a queda de cabelo usando o único produto cientificamente validado.
-                <br>
-                Fórmula 100% natural. Sem efeitos colaterais. Garantia de 90 dias.
+                <strong>100% Natural e sem Efeitos Colaterais.</strong>
             </p>
             <a href="#ofertas" class="cta-button">QUERO RECUPERAR MEU CABELO AGORA</a>
         </div>
+        <img src="dht-hero.jpg" alt="DHT Blocker Tratamento Capilar" class="hero-image">
     </div>
 </section>
 
@@ -385,24 +401,24 @@
         <h2>Por Que Escolher o DHT BLOCKER?</h2>
         <div class="benefits-grid">
             <div class="benefit-card">
-                <div class="icon">🔬</div>
+                <span class="icon">🔬</span>
                 <h3>Tecnologia Foti-Solution 5x</h3>
                 <p>A exclusiva tecnologia importada do Japão age diretamente nas glândulas sublinguais, resultando em absorção muito mais rápida.</p>
             </div>
             <div class="benefit-card">
-                <div class="icon">🌱</div>
+                <span class="icon">🌱</span>
                 <h3>100% Natural e Seguro</h3>
                 <p>Sua fórmula é totalmente baseada em ingredientes naturais, testados clinicamente e livres de química agressiva.</p>
             </div>
             <div class="benefit-card">
-                <div class="icon">⏱️</div>
+                <span class="icon">⏱️</span>
                 <h3>Ação Até 5x Mais Rápida</h3>
                 <p>Comprovado contra os principais tratamentos tradicionais como Minoxidil e Finasterida — com até 5x mais eficácia.</p>
             </div>
             <div class="benefit-card">
-                <div class="icon">🛡️</div>
+                <span class="icon">🛡️</span>
                 <h3>Garantia Blindada de 90 Dias</h3>
-                <p>Você tem 90 dias para testar e ver resultados. Se não estiver satisfeito(a), devolvemos 100% do valor investido.</p>
+                <p>Você tem 90 dias para testar e ver resultados. Se não estiver satisfeito(a), basta pedir reembolso que devolvemos 100% do valor.</p>
             </div>
         </div>
     </div>
@@ -434,6 +450,7 @@
     <div class="container">
         <h2>Desafio dos 90 Dias</h2>
         <p>Não temos medo de garantir os resultados. Se em até 90 dias você não notar nenhuma melhora, devolvemos 100% do seu dinheiro na hora.</p>
+        <a href="#" class="cta-button">TESTE SEM RISCO</a>
     </div>
 </section>
 
@@ -463,18 +480,19 @@
 <!-- Rodapé -->
 <footer>
     <div class="container">
+        <img src="logo-dht-footer.png" alt="Logo DHT Blocker Rodapé" style="display:none;">
         <div class="footer-links">
-            <a href="#">Política de Privacidade</a> |
-            <a href="#">Termos de Uso</a> |
+            <a href="#">Política de Privacidade</a>
+            <a href="#">Termos de Uso</a>
             <a href="#">Site Seguro</a>
         </div>
         <p>© 2025 DHT Blocker. Todos os direitos reservados.</p>
-        <p class="warning">⚠️ ATENÇÃO: O DHT BLOCKER ORIGINAL só é vendido no SITE OFICIAL e com REPRESENTANTES AUTORIZADOS no WHATSAPP.</p>
+        <p class="warning">⚠️ ATENÇÃO: O DHT BLOCKER ORIGINAL só é vendido no SITE OFICIAL e com REPRESENTANTES AUTORIZADOS no WHATSAPP. Produtos encontrados no Mercado Livre, Shopee, Magalu e similares são FALSOS e podem ser prejudiciais à saúde.</p>
     </div>
 </footer>
 
-<!-- Botão Flutuante WhatsApp -->
-<a href="https://wa.me/5531975105402?text=Ol%C3%A1,%20quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20DHT%20Blocker." class="whatsapp-float" target="_blank">&#x2709;</a>
+<!-- Botão Flutuante Telefone -->
+<a href="https://wa.me/5531975105402?text=Ol%C3%A1,%20quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20DHT%20Blocker." class="contact-float" target="_blank">📞</a>
 
 </body>
 </html>
